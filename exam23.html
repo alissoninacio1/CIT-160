@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q23✔</title>
+    <script>
+        /*defining table:
+        input: no user input
+        process: compute the average of all the numbers stored in the array that are larger than 1000. 
+        If none of the numbers in the array are larger than 1000, my function must return 0 (zero). Get the output.
+        output: show the result
+        */
+        var test1 = [70, 1010, 950, 2014, 6];
+        var test2 = [-72.3, 3000, 873, 2312, 68, 7501.3];
+        var test3 = [70, 950, 671, 6];
+
+        function test() {
+        let array1 = averageBig(test1);
+        let array2 = averageBig(test2);
+        let array3 = averageBig(test3);
+        document.getElementById('out').innerHTML = array1 + '<br>' + array2 + '<br>' + array3;    
+        }
+
+        function averageBig(list) {
+         let max = Math.max.apply(Math, list); //Math.max(...list)   with spread operator runs well also. 
+         if (max < 1000) return 0;// to determine if the numbers are less than 1000
+
+         else {
+         let count = 0; let accum = 0;
+                                                //to accumulate the num of elements > 1000.
+         for(let b = 0; b < list.length; b++) { 
+            if (list[b] > 1000) {accum += 1}
+            }
+                                                // to sum the numbers that are > 1000
+          for(let i = 0; i < list.length; i++) {
+            if(list[i] > 1000) {count += list[i];}
+          }
+                                                //the average of the sum by the num of elements 
+         let avg = count / accum;
+         return avg.toFixed(2)
+         }
+
+        }
+    </script>
+</head>
+<body>
+    <h3>Question 23- arrays</h3>
+    <p> test1 = [70, 1010, 950, 2014, 6]</p>
+    <p> test2 = [-72.3, 3000, 873, 2312, 68, 7501.3]</p>
+    <p> test3 = [70, 950, 671, 6]</p>
+    
+    <button type="button" onclick="test()">Run</button>
+    <div id="out"></div>
+</body>
+</html>

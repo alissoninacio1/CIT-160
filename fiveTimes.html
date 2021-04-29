@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Times-V</title>
+    <script>
+        /*
+        defining table:
+        input: no user's input
+        process: using a loop that calculate the five times table and display it in one column. 
+        outuput: tableshowing the multiplications
+        */
+        "use strict"
+        
+        let tabuada = "", i;
+        function multFive() {
+            for (i = 1; i <= 12; i++) {
+               tabuada +=  `5 x ${i} = ` + i * 5 + "<br>";
+               document.getElementById("divFive").innerHTML = tabuada;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1><i>Five times table</i></h1> <br>
+    <button type="button" onclick="multFive()">Click here to see the table</button> <br><br>
+    <div id="divFive"></div>
+</body>
+</html>

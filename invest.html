@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest💸💶💰💵💴</title>
+    <script>
+    /* defining table:
+    input: principal, annual interest rate, years, payments, and periods per year.
+   
+    process: Make the doFV function take in the input and calls  the computeFutureValue function and then outputs the result;
+    computeFutureValue function will take the agruments from doFV function and does the needed caluclation. 
+    
+    ouput: the future amount of money
+    */
+    "use strict"
+
+        function doFV() {
+            let amInv = parseFloat(document.getElementById("amInv").value);
+            let anRate = parseFloat(document.getElementById("anRate").value);
+            let numY = parseFloat(document.getElementById("numY").value);
+            let ppy = parseFloat(document.getElementById("ppy").value);
+
+            let showUser = computeFutureValue(amInv, anRate, numY, ppy);
+            document.getElementById("divout").innerHTML = showUser;
+        }
+
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            //f = principal * (Math.pow (1 + annualRate, years * periodsPerYear )); 
+            let f = principal * ( 1 + (annualRate / periodsPerYear)) ** (years * periodsPerYear);
+            return `$${f.toFixed(2)}`;
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>Investment Calculator</h1>
+
+    <table>
+        <tr>
+            <td>Amount invested (principal)</td>
+            <td><input type="text" id="amInv"></td>
+        </tr>
+        <tr>
+            <td>Annual rate (example: .08)</td>
+            <td><input type="text" id="anRate"></td>
+        </tr>
+        <tr>
+            <td>Number of years</td>
+            <td><input type="text"  id="numY"></td>
+        </tr>
+        <tr>
+            <td>Periods per year</td>
+            <td><input type="text"  id="ppy"></td>
+        </tr>
+        <tr>
+            <td> <button type="button" onclick="doFV()">Compute future Value</button> </td>
+            <td> <div id="divout"></div> </td>
+        </tr>
+    </table>
+      
+</body>
+</html>

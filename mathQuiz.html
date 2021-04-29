@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Math</title>
+
+    <script>
+        //Defining  table:
+
+        //inputs: enter a number; enter an arithmetc operator; enter an answer to the problem.
+
+        //processing: Computing the correct answer based on the arithmetic operator, and compare it to the child's answer using switch case conditional.
+
+        //output: "Correct! Good job" if the result is correct or "Incorrect. Try again!" if not. 
+    function mathFunc() {
+        let xVar =  parseFloat(document.getElementById('xNum').value);
+        let sign =  document.getElementById('sign').value;
+        let yVar =  parseFloat(document.getElementById('yNum').value);
+        let result =  parseFloat(document.getElementById('result').value);
+
+    // I will create a new variable to compare it at the final of the switch case
+        let answer = 0;
+        switch (sign) {
+            case "+": 
+                answer = xVar + yVar;        
+                 break;
+            case "-":
+                answer = xVar - yVar;
+                break;
+            case "*":
+                answer = xVar * yVar;
+                break;
+            case "/":
+                answer = xVar / yVar;
+                break;   
+        }
+
+        if (result == answer) {
+            document.getElementById('saida').innerHTML = "Correct! Good Job!";
+        } else {document.getElementById('saida').innerHTML = "Incorrect! Try again!";
+        }
+
+/*   (result == answer) ? document.getElementById('saida').innerHTML = "Correct! Good Job!" : document.getElementById('saida').innerHTML = "Incorrect! Try again!";  
+
+more shorter: 
+document.getElementById("saida").innerHTML = (result == answer ? "Correct! Good Job" : "Incorrect! Try again!")
+
+*/
+
+    }
+    </script>
+</head>
+<body>
+    <h1>Test Your Math Skills</h1>
+
+    <input placeholder="Enter a X Number" type="text" id='xNum'>
+    <input placeholder="Enter '+', '-', '*' or '/' " type="text" id='sign'>
+    <input placeholder="Enter a Y Number" type="text" id='yNum'> = 
+    <input placeholder="Enter the Result" type="text" id="result">
+    <br/>
+    <button type="button" onclick="mathFunc()">Check</button>
+    <br/>
+    <div id='saida'></div>
+</body>
+</html>

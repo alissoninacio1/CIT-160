@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windChill</title>
+    <script>
+        /* Defining table:
+        input: get temperature in Fahrenheit and the wind speed
+        process: find the factor's value using two funtions, calling the second in the first and writint the value in a div.
+        output: show the factor to the user
+        */
+        function doInputOutput() {
+         let t = parseFloat(document.getElementById("temp").value);
+         let s = parseFloat(document.getElementById("winp").value);
+         let storeWin = windChill(t, s); // call the function
+
+         document.getElementById("outDiv").innerHTML = storeWin; 
+        }
+
+        function windChill(tempF, speed) {
+        //let f = (35.74) + (0.6215 * t) - (35.75 * (Math.pow(s, 0.16)))  + (0.4275 * t * ( Math.pow(s ,0.16)));   another way to calculate
+        let f = (35.74) + (0.6215 * tempF) - (35.75 * (speed ** 0.16)) + (0.4275 * tempF * ( speed ** 0.16));
+            return f.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1> Get a Wind Chill</h1>
+    <input type="text" placeholder="Temperature F°" id="temp"><br>
+    <input type="text" placeholder="Wind Speed" id="winp"> <i>in miles per hour</i> <br>
+    <button type="button" onclick="doInputOutput()">Wind Chill</button> <br>
+    <div id="outDiv"></div>
+
+</body>
+</html>

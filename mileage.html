@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mileage</title>
+
+<!-- I will use my function here and calculate what I need to do-->
+    <script>
+    function mileageGallon() {
+       let iVal = parseFloat(document.getElementById('iValue').value);
+       let fVal = parseFloat(document.getElementById('fValue').value);
+       let gUsed = parseFloat(document.getElementById('nGallon').value);
+
+
+//Now, I'm calculating the division to establish what we want to get.
+       let division = (fVal - iVal) / gUsed;
+       let decimal = division.toFixed(2);
+
+       document.getElementById('resultValue').innerHTML = `The mileage is ${decimal} miles per gallon`
+        }
+    </script>
+</head>
+<body>
+    <h1>Mileage of a Vehicle per Gallons Used</h1>
+
+    <table>
+        <tr>
+            <th><strong>Odometer Values</strong></th>
+            <th><strong>Result</strong></th>
+        </tr>
+<!--Here I will put the values: initial-->
+        <tr>
+            <td>
+                <input type="text" placeholder="Enter your initial mileage" id="iValue">
+            </td>
+            <td rowspan="3"  id="resultValue"></td>
+        </tr>
+<!-- FInal odometer value-->  
+        <tr>
+            <td>
+                <input type="text" placeholder="Enter your final mileage" id="fValue">
+            </td>
+        </tr>
+<!--Gallons used, in order to determine it-->
+        <tr>
+            <td>
+                <input type="text" placeholder="Gallons of gasoline used" id="nGallon">
+            </td>
+        </tr>
+    </table>
+<!-- this is a button to convert -->
+    <button type="button" onclick="mileageGallon()">Convert</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <!-- Defining table:
+        *input: to take a customer's subtotal.
+        *process: to determine if the subtotal is greater than $50.00 && (the day is Tuesday || Wednesday). If yes, subtract 10% from the subtotal. 
+        *output: Add 6% of sales tax to get final Subtotal -->
+    <script>
+    function discountFunc() {
+        let subTotal = parseFloat(document.getElementById('subT').value);
+        let dayOfWeek = new Date().getDay();
+        let tenPerTax = subTotal * 0.9 * 1.06; //To calculate directly the discount of 10% + 6% of tax
+        let tax = subTotal * 1.06; // to add taxes
+
+        document.getElementById('outputSub').innerHTML = (subTotal > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) ? tenPerTax.toFixed(2) : tax.toFixed(2);     
+    }
+    </script>
+</head>
+<body>
+    <h1>Happy Fruit Store</h1>
+    <p>Every Tuesaday and Wednesday on purchases over $50.00, we offer you 10% off.</p>
+    <input placeholder="Enter your Subtotal" type="text" id="subT"><br/>
+    <button type="button" onclick="discountFunc()">Apply</button><br/>
+    <div id="outputSub"></div>
+</body>
+</html>

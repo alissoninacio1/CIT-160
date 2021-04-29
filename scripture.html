@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripture</title>
+<!--My scrpit tag where I'll apply the function "applyScripture()"-->
+<script>
+    function applyScripture() {
+        let name = document.getElementById("nameInputBox").value;
+        //My scripture will be Alma 38:2
+        let scripture = `And now, ${name}, I trust that I shall have great joy in you, because of your steadiness and your faithfulness unto God; for as you have commenced in your youth to look to the Lord your God, even so I hope that you will continue in keeping his commandments; for blessed is he that endureth to the end.`;
+        document.getElementById("outputDiv").innerHTML = scripture;
+    }
+</script>
+</head>
+<body>
+    <label>Please, enter your name.</label>
+    <br/>
+    <input type="text" id="nameInputBox">
+    <br/>
+    <button type="button" onclick="applyScripture()">Apply a scripture to your name!</button>
+    <br/>
+    <div id="outputDiv"></div>  
+</body>
+</html>

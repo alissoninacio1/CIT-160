@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Wear</title>
+    <!-- To this code, I wanted to use if-else for my own option-->
+
+    <script>
+        /*Defining  table: 
+
+        *inputs: Enter a Weather;
+        *processing: If the user enter 'hot', 'rain' and 'snow', assign to the correspond output. If the user enters any other weather type, the program should output "shoes."
+        *output: the correct footwear;
+        */
+        
+function footWear() {
+    let Type = document.getElementById("getWeather").value;    
+
+    if (Type == "hot") {
+        document.getElementById("outputDiv").innerHTML = "sandals";
+    } else if (Type == "rain") {
+        document.getElementById("outputDiv").innerHTML = "galoshes";
+    } else if (Type == "snow") {
+        document.getElementById("outputDiv").innerHTML = "boots";
+    } else {
+        document.getElementById("outputDiv").innerHTML = "shoes";
+    }
+}
+    </script>
+</head>
+<body>
+<p>This program helps a user choose the correct footwear for the day's weather.</p>
+
+<!-- the user will enter a weather and check the correct footwear-->    
+    Enter a weather type <input type="text" id="getWeather">
+    <button type="button" onclick="footWear()">Check</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

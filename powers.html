@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powers of Two</title>
+    <script>
+        /*
+        defining table:
+        input: no user's input
+        processing: using a loop to calculate and display the powers of 2, from 0 to 31 exponents and show them like this series: 1, 2, 4, 8, … 2147483648
+        output: show the numbers 
+        */
+        "use strict"
+
+        let potencia = "", i;
+        function multFive() {
+            for (i = 0; i <= 31; i++) {
+            //    potencia +=  Math.pow(2,i) + ', ';
+            //    document.getElementById("divPow").innerHTML = potencia;
+            document.getElementById("divPow").innerHTML = (i == 31) ? (potencia +=  Math.pow(2,i) + '. ') : potencia +=  Math.pow(2,i) + ', ';
+               
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1><i>Power of 2 series</i></h1> <br>
+    <button type="button" onclick="multFive()">Click here to see the powers of 2</button> <br><br>
+    <div id="divPow"></div>
+</body>
+</html>

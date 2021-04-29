@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q21</title>
+    <script>
+        /*Defining table:
+        input: start, end, months
+        process: to perform the calculation and show the answer to the user
+        output: answer*/
+    function test() {
+     let s = parseFloat(document.getElementById('start').value);   
+     let e = parseFloat(document.getElementById('end').value);  
+     let m = parseFloat(document.getElementById('months').value);  
+
+     let result = depreciation(s, e, m);
+     document.getElementById('out').innerHTML = result; 
+    }    
+    function depreciation(startValue, endValue, months) {
+     let d = (startValue - endValue) / months ;
+     return d.toFixed(2);
+    }
+    </script>
+</head>
+<body>
+    start <input type="text" id="start"> <br>
+    end <input type="text" id="end"> <br>
+    months <input type="text" id="months"> <br>
+    <button type="button" onclick="test()">Calculate</button>
+    <div id="out"></div>
+</body>
+</html>

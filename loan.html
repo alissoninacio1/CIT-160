@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan</title>
+
+    <script>
+        /*
+        *defining table
+        input:
+        processing
+        output:
+        */
+        "use strict"
+
+        function doPayment() {
+         let amBow  = parseFloat(document.getElementById("amBow").value);
+         let anIrate  = parseFloat(document.getElementById("anIrate").value);
+         let numY  = parseFloat(document.getElementById("numY").value);
+         let ppy = parseFloat(document.getElementById("ppy").value);
+        }
+        // function doBalance ( ) 
+        // function computePayment (principal, annualRate, years, periodsPerYear)
+        // function computeBalance (principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate)
+    </script>
+</head>
+<body>
+    <h1>Loan Calculator</h1>
+    <!-- first part-->
+    <table>
+        <tr>
+            <td>Amount borrowed (principal)</td>
+            <td><input type="text" id="amBow"></td>
+        </tr>
+        <tr>
+            <td>Annual interest rate (example: .065)</td>
+            <td><input type="text" id="anIrate"></td>
+        </tr>
+        <tr>
+            <td>Number of years</td>
+            <td><input type="text"  id="numY"></td>
+        </tr>
+        <tr>
+            <td>Payments per year</td>
+            <td><input type="text"  id="ppy"></td>
+        </tr>
+        <tr>
+            <td> <button type="button" onclick="doPayment()">Compute payment</button> </td>
+            <td> <div id="divout"></div> </td>
+        </tr>
+
+      <!-- second part-->  
+        <tr>
+            <td>Number of payments paid to date</td>
+            <td><input type="text" id="nppy"></td>
+        </tr>
+        <tr>
+            <td> <button type="button" onclick="">Compute payoff amount</button> </td>
+            <td> <div id="outdiv"></div> </td>
+        </tr>
+        
+    </table>
+</body>
+</html>

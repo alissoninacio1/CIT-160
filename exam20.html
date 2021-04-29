@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q20</title>
+    <script>
+        /*Defining table:
+        input: names
+        process: to get the names and to make the inversion of their order printing the names separate by comma
+        output: show the new format*/
+        function test(){
+        let aName = document.getElementById('first').value;
+        let bName = document.getElementById('second').value;   
+        var fn = makeFullName(aName, bName );
+        document.getElementById("out").innerHTML = fn;
+        }
+        
+        function makeFullName(givenName, familyName) { 
+        return `${familyName}, ${givenName}`;
+        }
+
+    </script>
+</head>
+<body>
+    given Name <input type="text" id="first"> <br>
+    family Name <input type="text" id="second"> <br>
+    <button type="button" onclick="test()">click here</button>
+    <div id="out"></div>
+</body>
+</html>

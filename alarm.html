@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <!-- *input:  all inputs are from our computer’s clock
+         *process: Check if the days got are weekdays, or if the days are holidays/weekend (specially, Jan 1, July 4, Dec 25)
+         * output: "Get up!" to weekdays, and "Sleep in" to the second case
+    -->
+    <script>
+    function alarmFunc() {
+        var now = new Date();
+        var month = now.getMonth();
+        var dayOfMonth = now.getDate();
+        var dayOfWeek = now.getDay();
+        
+        if((dayOfWeek  == 0) || (dayOfWeek == 6) || ((month == 0) && (dayOfMonth == 1)) || ((month == 6) && (dayOfMonth == 4)) || ((month == 11) && (dayOfMonth == 25))) {
+         document.getElementById('output').innerHTML = "Sleep in";
+        }else {
+            document.getElementById('output').innerHTML = "Get Up!"
+        }
+    } 
+    </script>
+</head>
+<body>
+    <h1><i>Amazing Alarm</i></h1><br/>
+    <button type="button" onclick="alarmFunc()">Check</button>
+    <div id="output"></div>
+</body>
+</html>

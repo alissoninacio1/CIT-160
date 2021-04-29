@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert</title>
+<!-- Now, I'd like to write my JavaScript code-->
+    <script>
+        function conversionLiters() {
+            let valueQuarter = parseFloat(document.getElementById('quartsValue').value);
+            
+            // 1 quart = 0.946L, x * 0.946L
+            let valueLiter = valueQuarter * 0.946;
+            //  rounding the number to keep only two decimal.
+            let valueFixed = valueLiter.toFixed(2);
+
+            document.getElementById('litersValue').innerHTML = `The value in liters is ${valueFixed}L`;
+        }
+       
+    </script>
+</head>
+<body>
+    <h1>Convert Quarts to Liters</h1>
+    <!--To explain my code, I'd like to say that I'll use a table, an input for user write your value and a button, in order to convert -->
+    <table>
+        <tr>
+            <th><em>Quart Value</em></th>
+            <th><em>Result</em></th>
+        </tr>
+
+        <tr>
+            <td><input type="text" placeholder="Enter your value" id="quartsValue">
+            </td>
+
+            <td id="litersValue"></td>
+        </tr>
+    </table>
+    
+    <button type="button" onclick="conversionLiters()">Convert</button>
+ 
+</body>
+</html>
